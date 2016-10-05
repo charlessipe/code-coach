@@ -3,20 +3,25 @@
   <p class="lead">
     Social resource sharing application.
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
 <div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+  Hello, 
+  <h4>Submit New Resource</h4>
+  <form>
+    <span>Resource Title: </span> <input type="text" ng-model="newResource" /></input><br>
+    <span>URL:</span> <input type="text" ng-model="newUrl" /></input><br>
+    <span>Tags:</span> <input type="text" ng-model="newTags" /></input><br>
+    <button class="add-blog" type="submit" data-ng-click="addResource()">Add Resource</button>
+  </form>
 
-  <h4>Angular</h4>
+  <h4>Latest Resources</h4>
   <p>
     AngularJS is a toolset for building the framework most suited to your application development.
   </p>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+  <h4>Topics</h4>
+  <ul>
+    <li>Learning JavaScript</li>
+  </ul>
 </div>
