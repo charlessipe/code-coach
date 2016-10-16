@@ -29,6 +29,21 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/learning-javascript', {
+        templateUrl: 'views/learning-javascript.html',
+        controller: 'LearningJavascriptCtrl',
+        controllerAs: 'learningJavascript'
+      })
+      .when('/create-profile', {
+        templateUrl: 'views/create-profile.html',
+        controller: 'CreateProfileCtrl',
+        controllerAs: 'createProfile'
+      })
+      .when('/javascript-coaches', {
+        templateUrl: 'views/javascript-coaches.html',
+        controller: 'JavascriptCoachesCtrl',
+        controllerAs: 'javascriptCoaches'
+      })
       .otherwise({
         redirectTo: '/'
       });

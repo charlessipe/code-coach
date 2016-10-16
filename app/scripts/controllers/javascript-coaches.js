@@ -2,19 +2,16 @@
 
 /**
  * @ngdoc function
- * @name rankedResourcesApp.controller:MainCtrl
+ * @name rankedResourcesApp.controller:JavascriptCoachesCtrl
  * @description
- * # MainCtrl
+ * # JavascriptCoachesCtrl
  * Controller of the rankedResourcesApp
  */
 angular.module('rankedResourcesApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('JavascriptCoachesCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-
-    $scope.userName = "Charles";
-
   });

@@ -2,19 +2,16 @@
 
 /**
  * @ngdoc function
- * @name rankedResourcesApp.controller:MainCtrl
+ * @name rankedResourcesApp.controller:CreateProfileCtrl
  * @description
- * # MainCtrl
+ * # CreateProfileCtrl
  * Controller of the rankedResourcesApp
  */
 angular.module('rankedResourcesApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('CreateProfileCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-
-    $scope.userName = "Charles";
-
   });
