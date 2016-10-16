@@ -17,4 +17,19 @@ angular.module('rankedResourcesApp')
 
     $scope.userName = "Charles";
 
+    var database = firebase.database();
+
+    // Example to set Firebase
+    function writeUserData(userId, name, email, imageUrl) {
+      firebase.database().ref('users/' + userId).set({
+        username: name,
+        email: email,
+        profile_picture : imageUrl
+      });
+    }
+
+    writeUserData('chuckrocks', 'Charles', 'csipe84@seattleu.edu', 'http://portfolio.charlessipe.com/portfolio/images/charles-sipe-pic.jpg')
+
+    console.log("writeUserData");
+
   });

@@ -1,5 +1,5 @@
 # Code Coach
-Code Coach connects people who want to learn code with experienced coders for regular meetings.r
+Code Coach connects people who want to learn code with experienced coders for regular meetings.
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.15.1.
