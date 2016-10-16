@@ -1,4 +1,5 @@
-# ranked-resources
+# Code Coach
+Code Coach connects people who want to learn code with experienced coders for regular meetings.r
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.15.1.
