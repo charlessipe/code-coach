@@ -44,6 +44,11 @@ angular
         controller: 'JavascriptCoachesCtrl',
         controllerAs: 'javascriptCoaches'
       })
+      .when('/coach-profile', {
+        templateUrl: 'views/coach-profile.html',
+        controller: 'CoachProfileCtrl',
+        controllerAs: 'coachProfile'
+      })
       .otherwise({
         redirectTo: '/'
       });

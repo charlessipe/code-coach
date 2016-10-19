@@ -15,7 +15,7 @@ angular.module('rankedResourcesApp')
       'Karma'
     ];
 
-    function writeUserData(userId, name, email, imageUrl) {
+    /*function writeUserData(userId, name, email, imageUrl) {
       firebase.database().ref('users/' + userId).set({
         username: name,
         email: email,
@@ -23,7 +23,7 @@ angular.module('rankedResourcesApp')
       });
     }
 
-    writeUserData('chuckrocks', 'Chuck Spark', 'csipe84@seattleu.edu', 'http://portfolio.charlessipe.com/portfolio/images/charles-sipe-pic.jpg')
+    writeUserData('chuckrocks', 'Chuck Spark', 'csipe84@seattleu.edu', 'http://portfolio.charlessipe.com/portfolio/images/charles-sipe-pic.jpg')*/
 
 
     $scope.newProfile = function (){
@@ -32,6 +32,11 @@ angular.module('rankedResourcesApp')
         lastName: $scope.lastName,
         bio: $scope.newBio
       });  
+
+      $scope.userName = "";
+      $scope.firstName = "";
+      $scope.lastName = "";
+      $scope.newBio = "";
     }
 
 

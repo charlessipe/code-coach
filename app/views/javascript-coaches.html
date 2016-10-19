@@ -1,1 +1,14 @@
-<p>This is the javascript-coaches view.</p>
+
+<h2>JavaScript Coaches</h2>
+
+<!--<tr ng-repeat="user in users">
+  <td>Hi{{$index}}</td>
+  <td>{{ user.firstName }}</td>
+  <td>{{ user.lastName }}</td>
+  <td>{{ user.bio }}</td>
+</tr> -->
+
+<ul ng-repeat="user in users">
+  <li>Name: {{ user.firstName }} {{ user.lastName }}</li>
+  <li>Bio: {{ user.bio }}</li>
+</ul>
