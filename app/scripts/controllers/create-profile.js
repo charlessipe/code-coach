@@ -68,7 +68,7 @@ angular.module('rankedResourcesApp')
     // from Firebase Storage Quickstart
 
     function handleFileSelect(evt) {
-      //evt.stopPropagation();
+      evt.stopPropagation();
       evt.preventDefault();
       var file = evt.target.files[0];
       var metadata = {
@@ -93,7 +93,7 @@ angular.module('rankedResourcesApp')
     }
     
     window.onload = function() {
-      document.getElementById('file').addEventListener('change', handleFileSelect, false);
+      document.getElementById('file').addEventListener('change', handleFileSelect, true); //false event bubbling
       //document.getElementById('file').disabled = true;
       
       /*auth.onAuthStateChanged(function(user) {
