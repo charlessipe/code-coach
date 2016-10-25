@@ -5,6 +5,15 @@
   <span>First Name: </span> <input type="text" ng-model="firstName" /></input><br>
   <span>Last Name:</span> <input type="text" ng-model="lastName" /></input><br>
   <span>Bio:</span> <input type="text" ng-model="newBio" /></input><br>
-  <!--<span>Coaching Areas:</span> <input type="text" ng-model="newAreas" /></input><br> -->
+  <span>Times Available:</span> <input type="text" ng-model="newAvail" /></input><br>
+  <span>Coaching Areas:</span> <input type="text" ng-model="newAreas" /></input><br> 
   <button class="submit-profile" type="submit" data-ng-click="newProfile()">Create Profile</button>
 </form>
+
+<div class="well well-sm">
+  <p>Select a file below. When it is uploaded, a link will be displayed to the uploaded file.</p>
+  <h6>Choose File</h6>
+  <input type="file" id="file" name="file"/>
+  <h6>File URL:</h6>
+  <span id="linkbox"></span>
+</div>
