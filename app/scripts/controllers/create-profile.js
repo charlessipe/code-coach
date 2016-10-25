@@ -68,7 +68,7 @@ angular.module('rankedResourcesApp')
     // from Firebase Storage Quickstart
 
     function handleFileSelect(evt) {
-      evt.stopPropagation();
+      //evt.stopPropagation();
       evt.preventDefault();
       var file = evt.target.files[0];
       var metadata = {
