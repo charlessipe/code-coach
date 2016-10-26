@@ -15,17 +15,6 @@ angular.module('rankedResourcesApp')
       'Karma'
     ];
 
-    /*function writeUserData(userId, name, email, imageUrl) {
-      firebase.database().ref('users/' + userId).set({
-        username: name,
-        email: email,
-        profile_picture : imageUrl
-      });
-    }
-
-    writeUserData('chuckrocks', 'Chuck Spark', 'csipe84@seattleu.edu', 'http://portfolio.charlessipe.com/portfolio/images/charles-sipe-pic.jpg')*/
-
-
     $scope.newProfile = function (){
       firebase.database().ref('users/' + $scope.userName).set({
         firstName: $scope.firstName,
@@ -64,13 +53,15 @@ angular.module('rankedResourcesApp')
     // Points to 'images'
     //var imagesRef = spaceRef.parent;
 
+    $scope.dummyFunction = function(){
+    console.log('I work!');
+    };
+    
 
     // from Firebase Storage Quickstart
 
-    function handleFileSelect(evt) {
-      evt.stopPropagation();
-      evt.preventDefault();
-      var file = evt.target.files[0];
+    $scope.handleFileSelect = function(file) {
+      var file = document.getElementById('file').files[0]; //evt.target.files[0];
       var metadata = {
         'contentType': file.type
       };
@@ -92,11 +83,11 @@ angular.module('rankedResourcesApp')
       // [END oncomplete]
     }
     
-    window.onload = function() {
+    /*window.onload = function() {
       document.getElementById('file').addEventListener('change', handleFileSelect, true); //false event bubbling
       //document.getElementById('file').disabled = true;
       
-      /*auth.onAuthStateChanged(function(user) {
+      auth.onAuthStateChanged(function(user) {
         if (user) {
           console.log('Anonymous user signed-in.', user);
           document.getElementById('file').disabled = false;
@@ -105,7 +96,7 @@ angular.module('rankedResourcesApp')
           // Sign the user in anonymously since accessing Storage requires the user to be authorized.
           auth.signInAnonymously();
         }
-      });*/
-    }
+      });
+    }*/
 
   });
