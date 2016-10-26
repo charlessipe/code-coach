@@ -21,7 +21,8 @@ angular.module('rankedResourcesApp')
         lastName: $scope.lastName,
         bio: $scope.newBio,
         avail: $scope.newAvail,
-        areas: $scope.newAreas
+        areas: $scope.newAreas,
+        image: $scope.newImage
       });  
 
       $scope.userName = "";
@@ -30,6 +31,7 @@ angular.module('rankedResourcesApp')
       $scope.newBio = "";
       $scope.newAvail = "";
       $scope.newAreas = "";
+      $scope.newImage = "";
     
     } // end newProfile
 
@@ -52,10 +54,6 @@ angular.module('rankedResourcesApp')
 
     // Points to 'images'
     //var imagesRef = spaceRef.parent;
-
-    $scope.dummyFunction = function(){
-    console.log('I work!');
-    };
     
 
     // from Firebase Storage Quickstart
