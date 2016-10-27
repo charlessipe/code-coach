@@ -2,7 +2,13 @@
 <h2>JavaScript Coaches</h2>
 
 <ul ng-repeat="user in users">
-  <li>Name: {{ user.firstName }} {{ user.lastName }}</li>
-  <li>Bio: {{ user.bio }}</li>
-  <li><img src=" {{user.image}} " ></li>
+  <div class="well well-sm">
+    <img class="profile-pic" src=" {{user.image}} " width="100px" height="110px">
+    <li>Name: {{ user.firstName }} {{ user.lastName }}</li>
+    <li>Bio: {{ user.bio }}</li>
+    <li>Areas of Expertise: {{ user.areas}}</li>
+    <li>Times Available: {{ user.avail}}</li>
+    <li>More Info:</li>
+    <li><button>Contact</button></li>
+  </div>
 </ul>

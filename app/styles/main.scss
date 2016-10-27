@@ -18,6 +18,19 @@ body {
   margin: 10px;
 }
 
+.well li {
+  list-style-type: none;
+}
+
+.well img {
+  float: left;
+  margin: 7px;
+}
+
+.main-profile-pic {
+  float: right;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
