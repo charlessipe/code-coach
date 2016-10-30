@@ -1,6 +1,13 @@
 <h2>Ruby on Rails Coaches</h2>
 
-<ul ng-repeat="user in users">
-  <li>Name: {{ user.firstName }} {{ user.lastName }}</li>
-  <li>Bio: {{ user.bio }}</li>
+<ul ng-repeat="user in users" >
+  <div class="well well-sm">
+    <img class="profile-pic" src=" {{user.image}} " width="100px" height="110px">
+    <li>Name: {{ user.firstName }} {{ user.lastName }}</li>
+    <li>Bio: {{ user.bio }}</li>
+    <li>Areas of Expertise: {{ user.areas}}</li>
+    <li>Times Available: {{ user.avail}}</li>
+    <li>Portfolio: <a href="{{ user.portfolio}}" target="_blank">{{ user.portfolio}}</a> </li>
+    <li><button>Contact</button></li>
+  </div>
 </ul>

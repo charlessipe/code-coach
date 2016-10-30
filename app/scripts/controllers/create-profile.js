@@ -22,7 +22,8 @@ angular.module('rankedResourcesApp')
         bio: $scope.newBio,
         avail: $scope.newAvail,
         areas: $scope.newAreas,
-        image: $scope.newImage
+        image: $scope.newImage,
+        portfolio: $scope.newPortfolio
       });  
 
       $scope.userName = "";
@@ -32,6 +33,7 @@ angular.module('rankedResourcesApp')
       $scope.newAvail = "";
       $scope.newAreas = "";
       $scope.newImage = "";
+      $scope.portfolio = "";
     
     } // end newProfile
 

@@ -24,10 +24,28 @@ angular.module('rankedResourcesApp')
       console.log(snapshot.val());
       
       $scope.users = snapshot.val();
+      var userObject = snapshot.val();
+
       $scope.$apply()
 
-      console.log("Coach1: " + $scope.users["andyj"].firstName + " " + $scope.users["andyj"].lastName + " " + $scope.users["andyj"].bio);
+      $scope.usersArray = [];
+
+      // loop through Firebase object and push to array
+      for (var key in userObject) {
+        if (userObject.hasOwnProperty(key)) {
+          // push Firebase objects to array
+          //console.log(userObject[key]);
+          $scope.usersArray.push(userObject[key]);
+
+        }
+      };
+
+      console.log($scope.usersArray);
+
+      //console.log("Coach1: " + $scope.users["andyj"].firstName + " " + $scope.users["andyj"].lastName + " " + $scope.users["andyj"].bio);
     });
+
+
 
   //console.log("User list" + $scope.users[1]);
 
