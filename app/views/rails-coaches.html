@@ -1,6 +1,6 @@
 <h2>Ruby on Rails Coaches</h2>
 
-<ul ng-repeat="user in users" >
+<ul ng-repeat="user in usersArray | filter:currentFilter" >
   <div class="well well-sm">
     <img class="profile-pic" src=" {{user.image}} " width="100px" height="110px">
     <li>Name: {{ user.firstName }} {{ user.lastName }}</li>

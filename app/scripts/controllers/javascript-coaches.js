@@ -26,9 +26,10 @@ angular.module('rankedResourcesApp')
       $scope.users = snapshot.val();
       var userObject = snapshot.val();
 
-      $scope.$apply()
+      //$scope.$apply()
 
       $scope.usersArray = [];
+      $scope.currentFilter = "javascript";
 
       // loop through Firebase object and push to array
       for (var key in userObject) {
@@ -41,6 +42,7 @@ angular.module('rankedResourcesApp')
       };
 
       console.log($scope.usersArray);
+      $scope.$apply()
 
       //console.log("Coach1: " + $scope.users["andyj"].firstName + " " + $scope.users["andyj"].lastName + " " + $scope.users["andyj"].bio);
     });
