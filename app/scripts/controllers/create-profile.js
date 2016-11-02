@@ -33,9 +33,10 @@ angular.module('rankedResourcesApp')
       $scope.newAvail = "";
       $scope.newAreas = "";
       $scope.newImage = "";
-      $scope.portfolio = "";
+      $scope.newPortfolio = "";
     
     } // end newProfile
+
 
     // Points to the root reference
     var storageRef = firebase.storage().ref();

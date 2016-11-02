@@ -54,6 +54,11 @@ angular
         controller: 'RailsCoachesCtrl',
         controllerAs: 'railsCoaches'
       })
+      .when('/contact-coach', {
+        templateUrl: 'views/contact-coach.html',
+        controller: 'ContactCoachCtrl',
+        controllerAs: 'contactCoach'
+      })
       .otherwise({
         redirectTo: '/'
       });
