@@ -1,0 +1,40 @@
+<p>This is the sign-up view.</p>
+
+{{testString}}
+
+<!-- Log in panel -->
+      <!--<div class="alert alert-success" ng-show="currentUserEmail" role="alert">You are logged in as {{currentUserEmail}}</div>
+      <div class="alert alert-danger" ng-show="!currentUserEmail" role="alert">You are not logged in. Log in <a href="#">here</a>.</div> -->
+      <!--
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Log In</h3>
+        </div>
+        <div class="panel-body">
+          <form ng-submit="logInUser()" ng-submit="getAuth()">
+            <p>Email: <input type="text" ng-model="loginEmail" placeholder="email"></input> Password: <input type="password" ng-model="loginPassword" placeholder="password"></input> <input type="submit" id="submit" value="Submit" /></input> </p> 
+          </form>
+        </div>
+      </div> -->
+
+
+      <!-- Create account panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Create a User Account</h3>
+        </div>
+        <div class="panel-body">
+          <form ng-submit="createUser()">
+            <p>Enter your email:</p>
+            <input type="text" ng-model="userEmail" placeholder="email"></input>
+            <p>Enter a new password</p>
+            <input type="text" ng-model="userPassword" placeholder="password"></input><br>
+            <input type="submit" id="submit" value="Submit" /></input>
+          </form>
+        </div>
+      </div>
+
+      <!--
+      <button ng-click="logOut()" type="button" class="btn btn-danger">Log Out</button>
+
+      <p>User Id: {{currentUserId}}</p> -->
