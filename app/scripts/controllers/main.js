@@ -17,6 +17,8 @@ angular.module('rankedResourcesApp')
 
     $scope.userName = "Charles";
 
+    
+
     /*var database = firebase.database();
 
     // Example to set Firebase
