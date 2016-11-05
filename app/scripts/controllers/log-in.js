@@ -48,7 +48,7 @@ angular.module('rankedResourcesApp')
                        // this value to authenticate with your backend server, if
                        // you have one. Use User.getToken() instead.
       $scope.currentUserId = uid;
-      $scope.currentEmail = email;
+      //$scope.currentEmail = email;
     }
 
     console.log(name);
@@ -58,20 +58,12 @@ angular.module('rankedResourcesApp')
     
     //$scope.$apply()
 
-
   }
 
-  $scope.getAuth(); // call getAuth on page load
 
-  $scope.logOut = function(){
-    firebase.auth().signOut().then(function() {
-      // Sign-out successful.
-    }, function(error) {
-      // An error happened.
-    });
+  //$scope.getAuth(); // call getAuth on page load
 
-    console.log("Logging out");
-  }
+
 
   $scope.checkLoginStatus = function(){
       firebase.auth().onAuthStateChanged(function(user) {
@@ -88,5 +80,16 @@ angular.module('rankedResourcesApp')
         }
       });
     }() // end checkLoginStatus 
+
+  $scope.logOut = function(){
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+      
+    }, function(error) {
+      // An error happened.
+    });
+
+    console.log("Logging out");
+  }
 
   });
