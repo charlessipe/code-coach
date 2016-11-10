@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name rankedResourcesApp.controller:RailsCoachesCtrl
+ * @name rankedResourcesApp.controller:FreecodecampCoachesCtrl
  * @description
- * # RailsCoachesCtrl
+ * # FreecodecampCoachesCtrl
  * Controller of the rankedResourcesApp
  */
 angular.module('rankedResourcesApp')
-  .controller('RailsCoachesCtrl', function ($scope) {
+  .controller('FreecodecampCoachesCtrl', function ($scope) {
 
     // Get a reference to the database service
     var database = firebase.database();
@@ -22,7 +22,7 @@ angular.module('rankedResourcesApp')
         var userObject = snapshot.val();
 
         $scope.usersArray = [];
-        $scope.currentFilter = "rails";
+        $scope.currentFilter = "free code camp";
 
         // loop through Firebase object and push to array
         for (var key in userObject) {

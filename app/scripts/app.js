@@ -69,6 +69,16 @@ angular
         controller: 'LogInCtrl',
         controllerAs: 'logIn'
       })
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl',
+        controllerAs: 'dashboard'
+      })
+      .when('/freecodecamp-coaches', {
+        templateUrl: 'views/freecodecamp-coaches.html',
+        controller: 'FreecodecampCoachesCtrl',
+        controllerAs: 'freecodecampCoaches'
+      })
       .otherwise({
         redirectTo: '/'
       });
