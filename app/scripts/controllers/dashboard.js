@@ -41,7 +41,7 @@ angular.module('rankedResourcesApp')
       firebase.database().ref('students/student1/messages/' + Date.now()).set({
         message: $scope.newMessage,
         messageName: $scope.messageName,
-        messageDate: Date.now()
+        messageDate: moment.unix(Date.now()).format("MMM DD h:mm A")
       });
 
       $scope.newMessage = "";
@@ -62,6 +62,17 @@ angular.module('rankedResourcesApp')
         $scope.$apply();
 
         console.log($scope.students["student1"].messages + " " + $scope.students["student1"].session + " " + $scope.students["student1"].favorites);
+    });
+
+    var messageData = firebase.database().ref('students/student1/messages/');
+      messageData.on('value', function(snapshot) {
+        console.log(snapshot.val());
+        
+        $scope.messageList = snapshot.val();
+        //$scope.$apply();
+
+
+
     });
 
 

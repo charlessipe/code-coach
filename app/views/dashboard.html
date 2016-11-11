@@ -8,7 +8,12 @@
 
 
 <h2>Coach Messages</h2>
-<p>{{students["student1"].messages}}</p>
+
+<ul ng-repeat="message in messageList">
+  <div class="well well-sm">
+    <li>{{ message.message}} {{ message.messageName}} {{message.messageDate}}</li>
+  </div>
+</ul>
 
 
 <h2>Favorite Coaches</h2>
