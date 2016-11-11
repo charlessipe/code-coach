@@ -4,10 +4,19 @@
 <div class="alert alert-danger" ng-show="!currentUserEmail" ng-show="!currentUserId" role="alert">You are not logged in.</div>
 
 <h2>Upcoming Sessions</h2>
-<p>Nom nom nom</p>
+<p>{{students["student1"].sessions}}</p>
+
 
 <h2>Coach Messages</h2>
-<p>Nom nom nom</p>
+<p>{{students["student1"].messages}}</p>
+
 
 <h2>Favorite Coaches</h2>
-<p>Nom nom nom</p>
+<p>{{students["student1"].favorites}}</p>
+
+
+<form>
+  <span>Message: </span> <input type="text" ng-model="newMessage" /></input><br>
+  <span>Your Name: </span> <input type="text" ng-model="messageName" /></input><br>
+  <button type="submit" ng-click="messagesData()">Send Message</button>
+</form>

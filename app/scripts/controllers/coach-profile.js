@@ -9,11 +9,7 @@
  */
 angular.module('rankedResourcesApp')
   .controller('CoachProfileCtrl', function ($scope) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
 
     // Get a reference to the database service
     var database = firebase.database();

@@ -11,12 +11,6 @@ angular.module('rankedResourcesApp')
   .controller('ContactCoachCtrl', function ($scope) {
     
 
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-
     $scope.contactCoach = function (){
       firebase.database().ref('messages/' + Date.now()).set({
         coachName: $scope.coachName,
