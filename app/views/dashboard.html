@@ -1,10 +1,13 @@
-<p>This is the dashboard view.</p>
 
 <div class="alert alert-success" ng-show="currentUserEmail" ng-show="currentUserId" role="alert">You are logged in as {{currentUserEmail}} {{currentUserId}}</div>
 <div class="alert alert-danger" ng-show="!currentUserEmail" ng-show="!currentUserId" role="alert">You are not logged in.</div>
 
 <h2>Upcoming Sessions</h2>
-<p>{{students["student1"].sessions}}</p>
+<ul ng-repeat="session in sessionList">
+  <div class="well well-sm">
+    <li>{{ session.sessionDate}} {{ session.sessionTime}}</li>
+  </div>
+</ul>
 
 
 <h2>Coach Messages</h2>
@@ -17,11 +20,29 @@
 
 
 <h2>Favorite Coaches</h2>
-<p>{{students["student1"].favorites}}</p>
+
+<ul ng-repeat="favorite in favoriteList">
+  <div class="well well-sm">
+    <li>{{ favorite.name}} {{ favorite.favoriteDate}}</li>
+  </div>
+</ul>
+
+<!-- <p>{{students["student1"].favorites}}</p> -->
 
 
 <form>
   <span>Message: </span> <input type="text" ng-model="newMessage" /></input><br>
   <span>Your Name: </span> <input type="text" ng-model="messageName" /></input><br>
   <button type="submit" ng-click="messagesData()">Send Message</button>
+</form>
+
+<form>
+  <span>Favorite Coach: </span> <input type="text" ng-model="coachName" /></input><br>
+  <button type="submit" ng-click="favoriteData()">Save Favorite</button>
+</form>
+
+<form>
+  <span>Session Date: </span> <input type="text" ng-model="sessionDate" /></input><br>
+  <span>Session Time: </span> <input type="text" ng-model="sessionTime" /></input><br>
+  <button type="submit" ng-click="sessionData()">Add Session</button>
 </form>

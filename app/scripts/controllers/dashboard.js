@@ -50,6 +50,30 @@ angular.module('rankedResourcesApp')
     } // end studentData
 
 
+    // Add favorite to student1 favorite
+    $scope.favoriteData = function (){
+      firebase.database().ref('students/student1/favorites/' + Date.now()).set({
+        name: $scope.coachName,
+        favoriteDate: moment.unix(Date.now()).format("MMM DD h:mm A")
+      });
+
+      $scope.coachName = ""; 
+    
+    } // end studentData
+
+    // Add session to student1 sessions
+    $scope.sessionData = function (){
+      firebase.database().ref('students/student1/sessions/' + Date.now()).set({
+        sessionDate: $scope.sessionDate,
+        sessionTime: $scope.sessionTime
+      });
+
+      $scope.sessionDate = ""; 
+      $scope.sessionTime = "";
+    
+    } // end studentData
+
+
     // Get a reference to the database service
     var database = firebase.database();
 
@@ -70,10 +94,23 @@ angular.module('rankedResourcesApp')
         
         $scope.messageList = snapshot.val();
         //$scope.$apply();
-
-
-
     });
+
+    var favoriteData = firebase.database().ref('students/student1/favorites/');
+      favoriteData.on('value', function(snapshot) {
+        console.log(snapshot.val());
+        
+        $scope.favoriteList = snapshot.val();
+        //$scope.$apply();
+    });
+
+    var sessionList = firebase.database().ref('students/student1/sessions/');
+      sessionList.on('value', function(snapshot) {
+        console.log(snapshot.val());
+        
+        $scope.sessionList = snapshot.val();
+        //$scope.$apply();
+    });    
 
 
   });
