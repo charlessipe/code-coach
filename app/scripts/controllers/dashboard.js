@@ -38,7 +38,7 @@ angular.module('rankedResourcesApp')
 
     // Add message to student1 messages
     $scope.messagesData = function (){
-      firebase.database().ref('students/student1/messages/' + Date.now()).set({
+      firebase.database().ref('students/' + $scope.currentUserId + '/messages/' + Date.now()).set({
         message: $scope.newMessage,
         messageName: $scope.messageName,
         messageDate: moment.unix(Date.now()).format("MMM DD h:mm A")
@@ -52,7 +52,7 @@ angular.module('rankedResourcesApp')
 
     // Add favorite to student1 favorite
     $scope.favoriteData = function (){
-      firebase.database().ref('students/student1/favorites/' + Date.now()).set({
+      firebase.database().ref('students/' + $scope.currentUserId + '/favorites/' + Date.now()).set({
         name: $scope.coachName,
         favoriteDate: moment.unix(Date.now()).format("MMM DD h:mm A")
       });
@@ -63,7 +63,7 @@ angular.module('rankedResourcesApp')
 
     // Add session to student1 sessions
     $scope.sessionData = function (){
-      firebase.database().ref('students/student1/sessions/' + Date.now()).set({
+      firebase.database().ref('students/' + $scope.currentUserId + '/sessions/' + Date.now()).set({
         sessionDate: $scope.sessionDate,
         sessionTime: $scope.sessionTime
       });
