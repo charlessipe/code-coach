@@ -10,6 +10,25 @@
 angular.module('rankedResourcesApp')
   .controller('DashboardCtrl', function ($scope) {
     
+    var user = firebase.auth().currentUser;
+
+      user.updateProfile({
+        displayName: user.uid
+      }).then(function() {
+        $scope.currentUserEmail = user.email;
+        $scope.currentUserId = user.uid;
+        // Update successful.
+      }, function(error) {
+        // An error happened.
+      }).then(function() {
+        console.log("Current User is:" + user.uid);
+        console.log("Current Email is:" + user.email);
+        $scope.updateDashboard();
+      }, function(error) {
+        // An error happened.
+      });
+
+    /* Use firebase.auth().currentUser instead 
     $scope.checkLoginStatus = function(){
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -25,6 +44,9 @@ angular.module('rankedResourcesApp')
         }
       });
     }() // end checkLoginStatus 
+    */
+
+    $scope.updateDashboard = function(){
 
     $scope.studentData = function (){
       firebase.database().ref('students/' + 'student1').set({
@@ -49,7 +71,7 @@ angular.module('rankedResourcesApp')
     
     } // end studentData
 
-
+    
     // Add favorite to student1 favorite
     $scope.favoriteData = function (){
       firebase.database().ref('students/' + $scope.currentUserId + '/favorites/' + Date.now()).set({
@@ -88,7 +110,7 @@ angular.module('rankedResourcesApp')
         console.log($scope.students["student1"].messages + " " + $scope.students["student1"].session + " " + $scope.students["student1"].favorites);
     });
 
-    var messageData = firebase.database().ref('students/student1/messages/');
+    var messageData = firebase.database().ref('students/' + $scope.currentUserId + '/messages/');
       messageData.on('value', function(snapshot) {
         console.log(snapshot.val());
         
@@ -96,7 +118,7 @@ angular.module('rankedResourcesApp')
         //$scope.$apply();
     });
 
-    var favoriteData = firebase.database().ref('students/student1/favorites/');
+    var favoriteData = firebase.database().ref('students/' + $scope.currentUserId + '/favorites/');
       favoriteData.on('value', function(snapshot) {
         console.log(snapshot.val());
         
@@ -104,7 +126,7 @@ angular.module('rankedResourcesApp')
         //$scope.$apply();
     });
 
-    var sessionList = firebase.database().ref('students/student1/sessions/');
+    var sessionList = firebase.database().ref('students/' + $scope.currentUserId + '/sessions/');
       sessionList.on('value', function(snapshot) {
         console.log(snapshot.val());
         
@@ -112,5 +134,6 @@ angular.module('rankedResourcesApp')
         //$scope.$apply();
     });    
 
+    } // end updateDashboard
 
   });
