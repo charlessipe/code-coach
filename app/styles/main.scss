@@ -10,9 +10,35 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   padding: 0.2em 0;
 }
 
+.navbar {
+  background-color: #008CBA;
+  color: white;
+  border-bottom: 5px solid #009CBA;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff;
+}
+
 body {
   padding: 0;
   font-family: 'Open Sans', sans-serif;
+}
+
+.jumbotron {
+  background-image: url("/images/code-coach-header.jpeg");
+  color: white;
+  height: 600px;
+}
+
+.jumbotron .header-overlay {
+  margin-top: 150px;
+  background: rgba(0, 0, 0, .5);
+  height: 200px;
 }
 
 .well {
@@ -58,8 +84,10 @@ body {
 .footer {
   padding-top: 19px;
   color: #777;
+  background-color: #EAE3CB;
   border-top: 1px solid #e5e5e5;
 }
+
 
 .container-narrow > hr {
   margin: 30px 0;
@@ -88,7 +116,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    //max-width: 730px;
   }
 
   /* Remove the padding we set earlier */
