@@ -14,5 +14,10 @@
     <li>Portfolio: <a href="{{ user.portfolio}}" target="_blank">{{ user.portfolio}}</a> </li>
     <li>Twitter: {{user.twitter}}</li>
     <li><a class="btn btn-default" ng-href="#/contact-coach">Contact Coach</a></li>
+    <li>
+        <a class="btn btn-info btn-lg" ng-click="saveCoach($index)">
+          <span class="glyphicon glyphicon-star"></span> Save Coach
+        </a>
+    </li>
   </div>
 </ul>
