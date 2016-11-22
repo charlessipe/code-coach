@@ -68,6 +68,8 @@ angular.module('rankedResourcesApp')
   $scope.saveCoach = function($index){
     console.log("Coach number " + $index + " added");
     alert("Coach number " + $index + " added");
+    alert($scope.currentUserId);
+    alert($scope.usersArray[$index].firstName + " " + $scope.usersArray[$index].lastName); // get first name of coach
   }
 
   //console.log("User list" + $scope.users[1]);
