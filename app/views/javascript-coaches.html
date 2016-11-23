@@ -15,7 +15,7 @@
     <li>Twitter: {{user.twitter}}</li>
     <li><a class="btn btn-default" ng-href="#/contact-coach">Contact Coach</a></li>
     <li>
-        <a class="btn btn-info btn-lg" ng-click="saveCoach($index)">
+        <a class="btn btn-info btn-lg" ng-click="saveCoach(usersArray.indexOf(user))">
           <span class="glyphicon glyphicon-star"></span> Save Coach
         </a>
     </li>

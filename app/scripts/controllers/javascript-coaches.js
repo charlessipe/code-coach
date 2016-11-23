@@ -64,13 +64,21 @@ angular.module('rankedResourcesApp')
       });
     }() // end checkLoginStatus 
 
-
-  $scope.saveCoach = function($index){
-    console.log("Coach number " + $index + " added");
-    alert("Coach number " + $index + " added");
+  // Save coach name to Firebase db when button clicked
+  $scope.saveCoach = function(index){
+    console.log("Coach number " + index + " added");
+    alert("Coach number " + index + " added");
     alert($scope.currentUserId);
-    alert($scope.usersArray[$index].firstName + " " + $scope.usersArray[$index].lastName); // get first name of coach
+    alert($scope.usersArray[index].firstName + " " + $scope.usersArray[index].lastName); // get first name of coach
+  
+    // store favorite coach name in Firebase db
+    firebase.database().ref('students/' + $scope.currentUserId + '/favorites/' + Date.now()).set({
+        name: $scope.usersArray[index].firstName + " " + $scope.usersArray[index].lastName,
+        favoriteDate: moment.unix(Date.now()).format("MMM DD h:mm A")
+      });
+
   }
+
 
   //console.log("User list" + $scope.users[1]);
 
