@@ -66,18 +66,37 @@ angular.module('rankedResourcesApp')
 
   // Save coach name to Firebase db when button clicked
   $scope.saveCoach = function(index){
+
     console.log("Coach number " + index + " added");
     alert("Coach number " + index + " added");
     alert($scope.currentUserId);
     alert($scope.usersArray[index].firstName + " " + $scope.usersArray[index].lastName); // get first name of coach
   
-    // store favorite coach name in Firebase db
-    firebase.database().ref('students/' + $scope.currentUserId + '/favorites/' + Date.now()).set({
-        name: $scope.usersArray[index].firstName + " " + $scope.usersArray[index].lastName,
-        favoriteDate: moment.unix(Date.now()).format("MMM DD h:mm A")
-      });
+    var favoriteData = firebase.database().ref('students/' + $scope.currentUserId + '/favorites/');
+        favoriteData.on('value', function(snapshot) {
+          $scope.favoriteList = snapshot.val();
+          console.log($scope.favoriteList);
+    });
+    console.log($scope.favoriteList);
+    
+    for (var key in $scope.favoriteList) {
+      console.log($scope.favoriteList[key].name);
 
-  }
+      if (($scope.usersArray[index].firstName + " " + $scope.usersArray[index].lastName) == $scope.favoriteList[key].name){
+        console.log("Duplicate found!");
+      }
+      else {
+        console.log("No duplicate");
+        // set Firebase coach's name
+        // store favorite coach name in Firebase db
+        firebase.database().ref('students/' + $scope.currentUserId + '/favorites/' + Date.now()).set({
+          name: $scope.usersArray[index].firstName + " " + $scope.usersArray[index].lastName,
+          favoriteDate: moment.unix(Date.now()).format("MMM DD h:mm A")
+          }); 
+      } 
+    }  // end for loop
+    
+  } // end saveCoach
 
 
   //console.log("User list" + $scope.users[1]);
