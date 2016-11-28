@@ -72,13 +72,24 @@ angular.module('rankedResourcesApp')
     alert($scope.currentUserId);
     alert($scope.usersArray[index].firstName + " " + $scope.usersArray[index].lastName); // get first name of coach
   
-    var favoriteData = firebase.database().ref('students/' + $scope.currentUserId + '/favorites/');
+    /*var favoriteData = firebase.database().ref('students/' + $scope.currentUserId + '/favorites/');
         favoriteData.on('value', function(snapshot) {
           $scope.favoriteList = snapshot.val();
           console.log($scope.favoriteList);
-    });
-    console.log($scope.favoriteList);
+    });*/
+
+    // retrieve favorites from logged in user
+    var favoriteData = firebase.database().ref('students/' + $scope.currentUserId + '/favorites/');
     
+    favoriteData.once('value').then(function(snapshot) {
+      $scope.favoriteList = snapshot.val();
+      console.log($scope.favoriteList); 
+    });  
+  
+    
+    setTimeout(function(){ 
+    console.log($scope.favoriteList);
+
     for (var key in $scope.favoriteList) {
       console.log($scope.favoriteList[key].name);
 
@@ -95,7 +106,9 @@ angular.module('rankedResourcesApp')
           }); 
       } 
     }  // end for loop
-    
+    }, 1000); // end setTimeout
+
+
   } // end saveCoach
 
 
