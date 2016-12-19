@@ -16,7 +16,7 @@
     <li><a class="btn btn-default" ng-href="#/contact-coach">Contact Coach</a></li>
     <li>
         <a class="btn btn-info btn-lg" ng-click="saveCoach(usersArray.indexOf(user))">
-          <span class="glyphicon glyphicon-star"></span> Save Coach
+          <span ng-class="{'highlight-star': highlightStar, 'glyphicon-star': true, 'glyphicon': true}"></span> Save Coach
         </a>
     </li>
   </div>

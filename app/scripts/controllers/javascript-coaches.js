@@ -15,6 +15,8 @@ angular.module('rankedResourcesApp')
       'Karma'
     ];
 
+  $scope.highlightStar = false;
+
   // Get a reference to the database service
   var database = firebase.database();
 
@@ -63,6 +65,7 @@ angular.module('rankedResourcesApp')
         $scope.$apply();
       } else {
     }
+
   });
 
 
@@ -87,7 +90,7 @@ angular.module('rankedResourcesApp')
   $scope.saveCoach = function(index){
     var coach = $scope.usersArray[index];
     var coachName = coach.firstName + " " + coach.lastName;
-    alert(coachName); // alert full name of coach
+    alert(coachName + " added to Favorites"); // alert full name of coach
 
     var isNameInList = false;
     for (var key in $scope.favoriteList) {
@@ -109,11 +112,47 @@ angular.module('rankedResourcesApp')
       }); 
     }
     else {
-      alert('not gonna add, duplicate');
+      alert('Already in Your Favorites');
     }
 
   } // end saveCoach
 
+
+
+  // highlight saved coaches 
+  $scope.highlightFavs = function(){
+    console.log("highlight favs");
+    
+    setTimeout(function(){ 
+
+      // names on the page
+      var i;
+      for(i = 0; i < $scope.usersArray.length; i++){
+        //console.log(i + " " + $scope.usersArray[i].firstName + " " + $scope.usersArray[i].lastName);
+      
+        // names that are favorited
+        for (var key in $scope.favoriteList) {
+          if ($scope.favoriteList[key].name == $scope.usersArray[i].firstName + " " + $scope.usersArray[i].lastName){
+            //console.log("Yes!!!!!!! this one is favorited: " + $scope.favoriteList[key].name)
+            console.log(i + " " + $scope.usersArray[i].firstName + " " + $scope.usersArray[i].lastName + " is favorited")
+            //$scope.highlightStar = true;
+          } else {
+            //console.log("No this one is not favorited: " + $scope.favoriteList[key].name); 
+            //$scope.highlightStar = false;
+          } 
+
+        } // end for loop
+
+      } // end for loop
+
+      
+  }, 1500);
+
+  // class="{{highlightStar}}"
+
+  };
+
+  $scope.highlightFavs();
 
   //console.log("User list" + $scope.users[1]);
 

@@ -71,18 +71,6 @@ angular.module('rankedResourcesApp')
     
     } // end studentData
 
-    
-    // Add favorite to student1 favorite
-    $scope.favoriteData = function (){
-      firebase.database().ref('students/' + $scope.currentUserId + '/favorites/' + Date.now()).set({
-        name: $scope.coachName,
-        favoriteDate: moment.unix(Date.now()).format("MMM DD h:mm A")
-      });
-
-      $scope.coachName = ""; 
-    
-    } // end studentData
-
     // Add session to student1 sessions
     $scope.sessionData = function (){
       firebase.database().ref('students/' + $scope.currentUserId + '/sessions/' + Date.now()).set({
